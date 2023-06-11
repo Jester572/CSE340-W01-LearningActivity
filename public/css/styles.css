@@ -1,6 +1,107 @@
+:root {
+  --primary-color: #004C6D;
+  --secondary-color: #A9A9A9;
+  --accent-color: #eb4c4c;
+}
+
 /******* Change Box Model ***************/
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+/* body {
+  background-image:url('../images/site/checkerboard.jpg');
+} */
+
+/******* Generals ***************/
+a {
+  text-decoration: none;
+
+}
+
+
+/******* Header ***************/
+
+.siteName {
+  font-size: xx-large;
+}
+
+#top-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*******  Navigation ***************/
+
+nav ul {
+  background-color: var(--primary-color);
+  list-style-type: none;
+  display: flex;
+  padding: 15px 0px;
+}
+
+nav ul li {
+  flex: 1 1 auto;
+  color: white;
+  text-align: center;
+
+}
+
+/*******  Main ***************/
+
+#carImg {
+  display: block;
+  margin: auto;
+  width: 100%;
+
+
+}
+
+#ownToday {
+  display: flex;
+  flex-direction: column;
+  background-color: #a9a9a96f;
+  border: 1px solid black;
+  padding: 5px;
+  height: auto;
+  position: absolute;
+  z-index: 1;
+  width: 40%;
+}
+
+#ownToday p,
+#ownToday h3 {
+  margin: 0px 10px;
+}
+
+#ownToday img {
+  width: 75%;
+
+}
+
+#upgrades {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.upgrade-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+  background-color: var(--primary-color);
+  padding: 15px;
+}
+
+.upgrade-wrapper a {
+  margin-top: 5px;
+  text-decoration: underline;
+  color: white;
+}
+
+.upgrade-wrapper:nth-child(even) {
+  grid-column: 2;
 }
