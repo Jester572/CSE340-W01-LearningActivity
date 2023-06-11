@@ -9,5 +9,9 @@
         margin: 25px auto;
         padding: 8px;
     }
+    
+    #ownToday{
+        width: 30%;
+    }
 
 }
