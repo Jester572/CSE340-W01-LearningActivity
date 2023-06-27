@@ -12,7 +12,7 @@
 }
 
 /******* Generals ***************/
-body{
+body {
   border: 5px solid var(--secondary-color);
   border-radius: 25px;
   padding: 5px;
@@ -20,7 +20,13 @@ body{
 
 a {
   text-decoration: none;
+}
 
+hr {
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 15px;
+  width: 100%;
 }
 
 
@@ -53,7 +59,7 @@ nav ul li {
 
 }
 
-nav ul li a{
+nav ul li a {
   display: block;
   padding: 15px 0px;
   color: white;
@@ -64,7 +70,7 @@ nav ul li a{
 
 nav ul li:hover {
   background-color: red;
-}  
+}
 
 /*******  Main ***************/
 
@@ -74,7 +80,7 @@ nav ul li:hover {
   width: 100%;
   position: relative;
   top: 50px;
-  
+
 }
 
 #ownToday {
@@ -129,6 +135,31 @@ nav ul li:hover {
   font-size: x-large;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-size: x-large;
+}
+
+/******* Cars  *********/
+
+#inv-display {
+  background-color: var(--primary-color);
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0px;
+  text-align: center;
+}
+
+#inv-display li {
+  background-color: var(--secondary-color);
+  border: 2px solid black;
+  border-radius: 15px;
+  margin: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: auto;
 }
