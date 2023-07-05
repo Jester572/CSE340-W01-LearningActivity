@@ -14,4 +14,29 @@
         width: 30%;
     }
 
+
+    /********* Inventory Display **********/
+    #inv-display {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    /********* Single Vehicle *************/
+
+    #single-inv-display {
+        display: flex;
+        border: 3px solid black;
+    }
+    
+    #vehicle-img-section {
+        width: 50%;
+
+        justify-self: center;
+        align-self: center;
+    }
+
+    #vehicle-info-section {
+        width: 50%;
+        padding: 5px;
+        border-left: 3px solid black;
+    }
+
 }

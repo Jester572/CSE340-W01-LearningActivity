@@ -78,7 +78,7 @@ Util.buildSingleInventoryPage = async function(data) {
   infoSection += '<p>' + '<b>Price: </b>$' + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</p>'
   infoSection += '<p>' + '<b>Color: </b>' + vehicle.inv_color + '</p>'
   infoSection += '<p>' + '<b>Description: </b>' + vehicle.inv_description + '</p>'
-  infoSection += '<p>' + '<b>Mileage: </b>' + vehicle.inv_miles + '</p>'
+  infoSection += '<p>' + '<b>Mileage: </b>' + new Intl.NumberFormat('en-US').format(vehicle.inv_miles) + '</p>'
 
   infoSection += '</div>'
 

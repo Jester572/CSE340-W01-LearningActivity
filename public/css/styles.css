@@ -29,6 +29,9 @@ hr {
   width: 100%;
 }
 
+img {
+  width: 100%;
+}
 
 /******* Header ***************/
 
@@ -147,7 +150,6 @@ h3 {
   background-color: var(--primary-color);
   list-style-type: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   padding: 0px;
   text-align: center;
 }
@@ -162,4 +164,23 @@ h3 {
   flex-direction: column;
   justify-content: center;
   height: auto;
+}
+
+
+/********* Single Vehicle *************/
+
+#vehicle-info-section h1{
+  text-align: center;
+  text-decoration: underline;
+  border: 1px solid black ;
+  border-radius: 15px;
+  background-color: var(--secondary-color);
+  box-shadow: 5px 5px 15px black;
+}
+
+#vehicle-img-section {
+  padding: 5px;
+  margin: 5px;
+  background-color: var(--secondary-color);
+  box-shadow: 5px 5px 15px;
 }
