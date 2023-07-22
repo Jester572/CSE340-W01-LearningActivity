@@ -91,6 +91,22 @@ Util.buildSingleInventoryPage = async function (data) {
   return page
 }
 
+/* **************************************
+* Build the Login view HTML
+* ************************************ */
+Util.buildLogin = function () {
+  let login = '<div id="login-form">'
+  login += '<form>'
+  login += '<input type="email" id="email"><label for="email">E-mail:</label>'
+  login += '<input type="password" id="password"><label for="password">Password:</label>'
+  login += '<input type="button" id="login-button" value="Log In">'
+  login += '<h2>No account? <a href="">Sign-up</a></h2>'
+  login += '</form>'
+  login += '</div>'
+
+  return login
+}
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 
