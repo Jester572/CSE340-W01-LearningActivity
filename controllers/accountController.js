@@ -20,7 +20,7 @@ accountCont.buildLogin = async function (req, res, next) {
 accountCont.buildRegister = async function(req, res, next) {
     let nav = await utilities.getNav()
     const register = await utilities.buildRegister()
-    console.log(register);
+
     res.render("account/register", {
         title: "Register",
         nav,
