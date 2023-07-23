@@ -1,4 +1,6 @@
 const invModel = require("../models/inventory-model")
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 const Util = {}
 
 /* ************************
@@ -95,11 +97,11 @@ Util.buildSingleInventoryPage = async function (data) {
 * Build the Login view HTML
 * ************************************ */
 Util.buildLogin = function () {
-  let login = '<div id="login-form">'
-  login += '<form>'
+  let login = '<div>'
+  login += '<form id="loginForm" action="/account/login" method="post">'
   login += '<label for="account_email">E-mail:</label></br><input name="account_email" type="email" id="email" required placeholder="Enter a valid email address"></br>'
   login += '<label for="account_password">Password:</label></br><input name="account_password" type="password" id="password" required></br>'
-  login += '<input type="button" id="login-button" value="Log In">'
+  login += '<input type="submit" id="login-button" value="Log In">'
   login += '<h2>No account? <a href="/account/register">Sign-up</a></h2>'
   login += '</form>'
   login += '</div>'
@@ -124,6 +126,44 @@ Util.buildRegister = function () {
 
   return register
 }
+
+Util.buildAccountManagement = function() {
+  let accountManagement = '<p>You are logged in</p>'
+
+  return accountManagement
+}
+
+Util.checkJWTToken = (req, res, next) => {
+  if (req.cookies.jwt) {
+    jwt.verify(
+      req.cookies.jwt,
+      process.env.ACCESS_TOKEN_SECRET,
+      function (err, accountData) {
+        if (err) {
+          req.flash("notice", "Please log in")
+          res.clearCookie("jwt")
+          return res.redirect("/account/login")
+        }
+      res.locals.accountData = accountData
+      res.locals.loggedin = 1
+      next()
+      })
+  } else {
+    next()
+  }
+}
+
+/* ****************************************
+ *  Check Login
+ * ************************************ */
+Util.checkLogin = (req, res, next) => {
+  if (res.locals.loggedin) {
+    next()
+  } else {
+    req.flash("notice", "Please log in.")
+    return res.redirect("/account/login")
+  }
+ }
 
 /* ****************************************
  * Middleware For Handling Errors
