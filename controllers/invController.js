@@ -1,5 +1,5 @@
 const invModel = require("../models/inventory-model")
-const utilities = require("../utilities/")
+const utilities = require("../utilities/index")
 
 const invCont = {}
 
@@ -16,20 +16,22 @@ invCont.buildByClassificationId = async function (req, res, next) {
     title: className + " vehicles",
     nav,
     grid,
+    errors: null,
   })
 }
 
-invCont.buildByInventoryId = async function(req, res) {
+invCont.buildByInventoryId = async function (req, res) {
   const inv_id = req.params.invId
-  
+
   const data = await invModel.getInventoryByInventoryId(inv_id)
   const page = await utilities.buildSingleInventoryPage(data)
   let nav = await utilities.getNav()
   const vehicleName = data[0].inv_make + ", " + data[0].inv_model
   res.render("./inventory/singleInventoryItem", {
-    title: vehicleName ,
+    title: vehicleName,
     nav,
     page,
+    errors: null,
   })
 }
 
